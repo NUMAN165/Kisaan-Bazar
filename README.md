@@ -1,97 +1,91 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 🚜 Kisaan Bazar (Kisan Connect Marketplace)
 
-# Getting Started
+Kisaan Bazar is a professional, role-based mobile application designed to empower the Indian agricultural community. It directly connects farmers with buyers, cutting out middlemen and ensuring fair pricing and transparency.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+Built with a focus on accessibility, the app supports multiple Indian languages and features a modern, tactile "Digital Soil" design system.
 
-## Step 1: Start Metro
+---
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## ✨ Key Features
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+- **🌍 Multi-Language Support**: Fully localized in **English**, **Hindi (हिन्दी)**, and **Marathi (मराठी)**.
+- **🔐 Role-Based Access Control (RBAC)**: Distinct experiences and dashboards for **Farmers** and **Buyers**.
+- **📊 Farmer Dashboard**: Personalized greetings, farm status alerts, and real-time market price updates.
+- **🛍️ Buyer Marketplace**: (In Progress) A streamlined interface for browsing and purchasing fresh produce directly from the source.
+- **🎨 Premium UI/UX**: Designed using the "Digital Soil" system—earthy tones, high contrast for outdoor readability, and smooth micro-animations.
 
-```sh
-# Using npm
-npm start
+---
 
-# OR using Yarn
-yarn start
+## 🛠️ Technology Stack
+
+- **Framework**: [React Native](https://reactnative.dev/) (0.85.2)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Navigation**: [React Navigation v7](https://reactnavigation.org/)
+- **Localization**: [i18next](https://www.i18next.com/) & `react-i18next`
+- **Storage**: [AsyncStorage](https://react-native-async-storage.github.io/async-storage/) (for language and session persistence)
+- **Theme**: Custom Design System with support for modern tokens (Material-inspired).
+
+---
+
+## 📂 Project Structure
+
+The project follows a **modular, feature-based architecture** for maximum scalability and maintainability:
+
+```text
+src/
+├── core/               # Global configuration & singleton services
+│   ├── auth/           # AuthContext & Session management
+│   ├── navigation/     # Root & Tab navigators
+│   ├── i18n/           # Localization setup & locale files
+│   └── theme/          # Design tokens & global styles
+├── shared/             # Reusable UI components & hooks
+└── modules/            # Feature-specific modules
+    ├── auth/           # Login, Register, Role Selection
+    ├── farmer/         # Farmer-specific screens & logic
+    └── buyer/          # Buyer-specific screens & logic
 ```
 
-## Step 2: Build and run your app
+---
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+## 🚀 Getting Started
 
-### Android
+### Prerequisites
 
-```sh
-# Using npm
-npm run android
+- [Node.js](https://nodejs.org/) (>= 22.11.0)
+- [Android Studio](https://developer.android.com/studio) (for Android Emulator)
+- [CocoaPods](https://cocoapods.org/) (for iOS development on macOS)
 
-# OR using Yarn
-yarn android
-```
+### Installation
 
-### iOS
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/NUMAN165/Kisaan-Bazar.git
+   cd Kisaan-Bazar
+   ```
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+3. **Run the application**:
+   - **Android**:
+     ```bash
+     npm run android
+     ```
+   - **iOS**:
+     ```bash
+     npm run ios
+     ```
 
-```sh
-bundle install
-```
+---
 
-Then, and every time you update your native dependencies, run:
+## 🤝 Contribution
 
-```sh
-bundle exec pod install
-```
+This project is currently in active development. Feel free to open issues or submit pull requests to improve the marketplace experience for our farmers!
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+---
 
-```sh
-# Using npm
-npm run ios
+## 📄 License
 
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+This project is private and for internal use.
