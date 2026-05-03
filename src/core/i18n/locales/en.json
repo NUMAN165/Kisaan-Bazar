@@ -1,0 +1,29 @@
+{
+  "translation": {
+    "welcome": "Welcome to Kisaan Bazar",
+    "login": "Login",
+    "register": "Register",
+    "signup": "Sign Up",
+    "emailPhone": "Email / Phone Number",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "noAccount": "Don't have an account? Sign up",
+    "hasAccount": "Already have an account? Login",
+    "chooseRole": "Choose Your Role",
+    "iAmFarmer": "I am a Farmer",
+    "iAmBuyer": "I am a Buyer",
+    "name": "Full Name",
+    "greeting": "Good Morning, {{name}}",
+    "farmStatus": "Your farm is looking healthy today.",
+    "priceAlert": "Cassava prices are up 12% this week in Lagos.",
+    "recentOrdersTitle": "Recent Orders",
+    "noRecentOrders": "No recent orders yet.",
+    "addNewProduct": "Add New Product",
+    "tabs": {
+      "home": "Home",
+      "myCrops": "My Crops",
+      "chat": "Chat",
+      "profile": "Profile"
+    }
+  }
+}
