@@ -19,11 +19,23 @@
     "recentOrdersTitle": "Recent Orders",
     "noRecentOrders": "No recent orders yet.",
     "addNewProduct": "Add New Product",
+    "manageCrops": "Manage your crops and inventory here.",
+    "chatDesc": "Your conversations with buyers and sellers.",
+    "profileDesc": "Manage your personal information and settings.",
+    "buyerWelcome": "Welcome to the Kisaan Marketplace!",
+    "buyerOrdersDesc": "Your past and current orders.",
+    "searchProducts": "Search for fresh produce...",
+    "featuredCategories": "Featured Categories",
+    "fruits": "Fruits",
+    "vegetables": "Vegetables",
+    "grains": "Grains",
     "tabs": {
       "home": "Home",
       "myCrops": "My Crops",
       "chat": "Chat",
-      "profile": "Profile"
+      "profile": "Profile",
+      "buyerHome": "Marketplace",
+      "orders": "Orders"
     }
   }
 }

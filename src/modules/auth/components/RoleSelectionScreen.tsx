@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { theme } from '../../../core/theme';
 import { useAuth } from '../../../core/auth/AuthContext';
 
@@ -18,7 +19,7 @@ export const RoleSelectionScreen = () => {
           onPress={() => setRole('FARMER')}
         >
           <View style={styles.iconCircle}>
-            <Text style={styles.iconText}>🚜</Text>
+            <Icon name="tractor" size={32} color={theme.colors.onPrimaryContainer} />
           </View>
           <Text style={styles.roleName}>{t('iAmFarmer')}</Text>
         </TouchableOpacity>
@@ -28,7 +29,7 @@ export const RoleSelectionScreen = () => {
           onPress={() => setRole('BUYER')}
         >
           <View style={styles.iconCircle}>
-            <Text style={styles.iconText}>🛒</Text>
+            <Icon name="cart" size={32} color={theme.colors.onPrimaryContainer} />
           </View>
           <Text style={styles.roleName}>{t('iAmBuyer')}</Text>
         </TouchableOpacity>

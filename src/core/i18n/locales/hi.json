@@ -19,11 +19,23 @@
     "recentOrdersTitle": "हाल ही के आदेश",
     "noRecentOrders": "अभी तक कोई हालिया आदेश नहीं।",
     "addNewProduct": "नया उत्पाद जोड़ें",
+    "manageCrops": "अपनी फसलों और इन्वेंट्री को यहां प्रबंधित करें।",
+    "chatDesc": "खरीदारों और विक्रेताओं के साथ आपकी बातचीत।",
+    "profileDesc": "अपनी व्यक्तिगत जानकारी और सेटिंग्स प्रबंधित करें।",
+    "buyerWelcome": "किसान मार्केटप्लेस में आपका स्वागत है!",
+    "buyerOrdersDesc": "आपके पिछले और वर्तमान आदेश।",
+    "searchProducts": "ताज़ी उपज खोजें...",
+    "featuredCategories": "विशेष श्रेणियां",
+    "fruits": "फल",
+    "vegetables": "सब्जियां",
+    "grains": "अनाज",
     "tabs": {
       "home": "होम",
       "myCrops": "मेरी फसलें",
       "chat": "चैट",
-      "profile": "प्रोफ़ाइल"
+      "profile": "प्रोफ़ाइल",
+      "buyerHome": "बाज़ार",
+      "orders": "आदेश"
     }
   }
 }

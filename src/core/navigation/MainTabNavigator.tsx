@@ -1,19 +1,17 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useTranslation } from 'react-i18next';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useAuth } from '../auth/AuthContext';
 import { FarmerDashboard } from '../../modules/farmer/components/FarmerDashboard';
-import { View, Text } from 'react-native';
+import { MyCropsScreen } from '../../modules/farmer/components/MyCropsScreen';
+import { ChatScreen } from '../../modules/chat/components/ChatScreen';
+import { ProfileScreen } from '../../modules/profile/components/ProfileScreen';
+import { BuyerDashboardScreen } from '../../modules/buyer/components/BuyerDashboardScreen';
+import { OrdersScreen } from '../../modules/buyer/components/OrdersScreen';
 import { theme } from '../theme';
 
 const Tab = createBottomTabNavigator();
-
-// Placeholder screens for other tabs
-const PlaceholderScreen = ({ name }: { name: string }) => (
-  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: theme.colors.background }}>
-    <Text style={{ ...theme.typography.displayMd, color: theme.colors.primary }}>{name}</Text>
-  </View>
-);
 
 export const MainTabNavigator = () => {
   const { user } = useAuth();
@@ -21,7 +19,7 @@ export const MainTabNavigator = () => {
 
   return (
     <Tab.Navigator
-      screenOptions={{
+      screenOptions={({ route }) => ({
         headerShown: false,
         tabBarActiveTintColor: theme.colors.primary,
         tabBarInactiveTintColor: theme.colors.onSurfaceVariant,
@@ -37,7 +35,24 @@ export const MainTabNavigator = () => {
           fontSize: 12,
           fontWeight: '600',
         },
-      }}
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName = 'help-circle-outline';
+
+          if (route.name === 'Home' || route.name === 'Buyer Home') {
+            iconName = focused ? 'home' : 'home-outline';
+          } else if (route.name === 'My Crops') {
+            iconName = focused ? 'sprout' : 'sprout-outline';
+          } else if (route.name === 'Chat') {
+            iconName = focused ? 'message-text' : 'message-text-outline';
+          } else if (route.name === 'Profile') {
+            iconName = focused ? 'account' : 'account-outline';
+          } else if (route.name === 'Orders') {
+            iconName = focused ? 'clipboard-text' : 'clipboard-text-outline';
+          }
+
+          return <Icon name={iconName} size={28} color={color} />;
+        },
+      })}
     >
       {user?.role === 'FARMER' ? (
         <>
@@ -48,32 +63,42 @@ export const MainTabNavigator = () => {
           />
           <Tab.Screen 
             name="My Crops"
+            component={MyCropsScreen}
             options={{ tabBarLabel: t('tabs.myCrops') }}
-          >
-            {() => <PlaceholderScreen name={t('tabs.myCrops')} />}
-          </Tab.Screen>
+          />
           <Tab.Screen 
             name="Chat"
+            component={ChatScreen}
             options={{ tabBarLabel: t('tabs.chat') }}
-          >
-            {() => <PlaceholderScreen name={t('tabs.chat')} />}
-          </Tab.Screen>
+          />
           <Tab.Screen 
             name="Profile"
+            component={ProfileScreen}
             options={{ tabBarLabel: t('tabs.profile') }}
-          >
-            {() => <PlaceholderScreen name={t('tabs.profile')} />}
-          </Tab.Screen>
+          />
         </>
       ) : (
         <>
-          {/* Buyer Tabs could go here */}
-          <Tab.Screen name="Buyer Home">
-            {() => <PlaceholderScreen name="Buyer Home" />}
-          </Tab.Screen>
-          <Tab.Screen name="Orders">
-            {() => <PlaceholderScreen name="Orders" />}
-          </Tab.Screen>
+          <Tab.Screen 
+            name="Buyer Home" 
+            component={BuyerDashboardScreen}
+            options={{ tabBarLabel: t('tabs.buyerHome') }}
+          />
+          <Tab.Screen 
+            name="Orders" 
+            component={OrdersScreen}
+            options={{ tabBarLabel: t('tabs.orders') }}
+          />
+          <Tab.Screen 
+            name="Chat"
+            component={ChatScreen}
+            options={{ tabBarLabel: t('tabs.chat') }}
+          />
+          <Tab.Screen 
+            name="Profile"
+            component={ProfileScreen}
+            options={{ tabBarLabel: t('tabs.profile') }}
+          />
         </>
       )}
     </Tab.Navigator>
